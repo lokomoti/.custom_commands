@@ -6,7 +6,7 @@ reset=`tput sgr0`
 
 spin()
 {
-  spinner="/|\\-/|\\-"
+  #spinner="/|\\-/|\\-"
   while :
   do
     for i in `seq 0 10`
@@ -20,6 +20,7 @@ spin()
   done
 }
 
+# Message
 tput bold; echo "${green}Starting upgrade script${reset}"
 
 # Start the Spinner:
@@ -31,15 +32,25 @@ SPIN_PID=$!
 # Kill the spinner on any signal, including our own exit.
 trap "kill -9 $SPIN_PID" `seq 0 15`
 
-#sleep 5
+# Start update process
 sudo apt-get update 2>&1 >/dev/null
 
+# Message
 echo -en "\012"
 tput bold; echo "${green}Upgrading${reset}"
 
+# Run upgrade pkg count
+#upgrade_list=" "
+#sudo apt list --upgradable 2>&1 >$upgrade_list
+#echo $upgrade_list
 
-#sleep 5
+# Run full upgrade
 sudo apt-get dist-upgrade -y 2>&1 >/dev/null
+sudo apt-get autoremove -y 2>&1 >/dev/null && sudo apt-get autoclean 2>&1 >/dev/null && sudo apt-get check 2>&1 >/dev/null
+
+# Message
 echo -en "\012"
 tput bold; echo "Finished ${reset}"
+
+# Kill progress function
 kill -9 $SPIN_PID
