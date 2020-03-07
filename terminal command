@@ -1,1 +1,0 @@
-git clone https://github.com/lokomoti/custom_commands.git && cd custom_commands/ && sudo chmod +x upgrade_pi.sh && ./upgrade_pi.sh
