@@ -12,7 +12,6 @@ sudo chmod +x ~/.custom_commands/run.sh
 sudo chmod +x ~/.custom_commands/*
 
 echo "Adding line to rc.local for startup"
-rc_line='source /home/pi/.custom_commands/run.sh &\n'
 
 if grep -Fq 'source /home/pi/.custom_commands/run.sh &' /etc/rc.local
 then echo "line already present in rc.local file"
