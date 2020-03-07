@@ -4,8 +4,9 @@ function upgrade_pi()
   sudo ~/.custom_commands/upgrade_pi.sh
 }
 
-function overclock_pi()
+function remove_setup_file()
 {
-  echo "not ready yet"
-  #sudo ~/.custom_commands/upgrade_pi.sh
+  clear
+  echo "removing setup file..."
+  sudo rm -r ~/setup_scripts.sh
 }
