@@ -15,4 +15,5 @@ sed -e '$i \source ~/.custom_commands/run.sh &\n' rc.local
 
 clear
 
-~/.custom_commands/upgrade_pi.sh
+sudo upgrade_pi
+sudo remove_setup_files
