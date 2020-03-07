@@ -11,7 +11,7 @@ source ~/.custom_commands/run.sh
 
 echo "Adding line to rc.local for startup"
 # Add line to rc.local to automaticaly load custom commands on startup
-sed -e '$i \source ~/.custom_commands/run.sh &\n' rc.local
+sudo sed -i -e '$i \source ~/.custom_commands/run.sh &\n' rc.local
 
 clear
 
