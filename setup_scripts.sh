@@ -16,7 +16,7 @@ rc_line='source /home/pi/.custom_commands/run.sh &\n'
 
 if grep -Fq 'source /home/pi/.custom_commands/run.sh &' /etc/rc.local
 then echo "line already present in rc.local file"
-else echo "adding line"; sudo sed -i -e "$i \source /home/pi/.custom_commands/run.sh &\n" /etc/rc.local
+else echo "adding line"; sudo sed -i -e '$i \source /home/pi/.custom_commands/run.sh &\n' /etc/rc.local
 fi
 
 #sudo sed -i '/source ~/.custom_commands/run.sh &/d' ./etc/rc.local
