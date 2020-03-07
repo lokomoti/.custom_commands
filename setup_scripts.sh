@@ -18,4 +18,4 @@ sudo sed -i -e '$i sudo ~/.custom_commands/boot.sh &\n' /etc/rc.local
 clear
 
 sudo upgrade_pi
-sudo remove_setup_files
+sudo remove_setup_file
